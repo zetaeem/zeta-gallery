@@ -1,0 +1,154 @@
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&display=swap');
+
+  :root{
+    --bone:#EDEAE1;
+    --ink:#181613;
+    --black:#000000;
+    --denim:#3C4D59;
+    --line: rgba(24,22,19,0.16);
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--bone);
+    color:var(--ink);
+    font-family:'Archivo', sans-serif;
+  }
+
+  .wrap{
+    max-width:1040px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  @media (max-width:600px){
+    .wrap{padding:0 20px;}
+  }
+
+  nav.wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:28px 32px;
+  }
+  .brandmark{
+    font-family:'Anton', sans-serif;
+    font-size:20px;
+  }
+  nav a{
+    color:var(--ink);
+    text-decoration:none;
+    font-size:14px;
+    font-weight:500;
+    margin-left:24px;
+  }
+
+  header.hero{
+    padding:40px 0 60px;
+    border-bottom:1px solid var(--line);
+  }
+  h1.giant{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    font-size:clamp(48px, 9vw, 96px);
+    line-height:0.9;
+    margin:0 0 16px;
+  }
+  header.hero p{
+    font-size:18px;
+    max-width:44ch;
+    line-height:1.55;
+  }
+
+  section{
+    padding:64px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin-bottom:36px;
+  }
+  .section-head h2{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    font-size:32px;
+    margin:0;
+  }
+  .section-head span{
+    font-size:14px;
+    color:var(--denim);
+  }
+
+  /* ---- GALERÍA ---- */
+  .galeria{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+  }
+  @media (max-width:760px){
+    .galeria{grid-template-columns:repeat(2, 1fr);}
+  }
+  @media (max-width:500px){
+    .galeria{grid-template-columns:1fr;}
+  }
+
+  .tarjeta{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .foto{
+    width:100%;
+    aspect-ratio: 3 / 4;
+    object-fit:cover;
+    background:#ffffff;
+    border:1px solid var(--line);
+    display:block;
+  }
+
+  .tarjeta .nombre{
+    font-weight:600;
+    margin-top:12px;
+    font-size:15px;
+  }
+  .tarjeta .detalle{
+    font-size:14px;
+    color:var(--denim);
+    margin-top:2px;
+  }
+
+  /* ---- MARCA ---- */
+  .marca-grid{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:40px;
+  }
+  @media (max-width:700px){
+    .marca-grid{grid-template-columns:1fr;}
+  }
+  .marca-grid .label{
+    font-size:18px;
+    font-weight:600;
+    color:var(--black);
+  }
+  .marca-grid p{
+    font-size:17px;
+    line-height:1.65;
+    max-width:58ch;
+    margin:0 0 16px;
+  }
+  .marca-grid p:last-child{margin-bottom:0;}
+
+  footer{
+    padding:24px 32px 40px;
+  }
+  footer .wrap{
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    color:var(--denim);
+    padding:0;
+  }
