@@ -60,7 +60,9 @@
     max-width:44ch;
     line-height:1.55;
   }
-
+  .logo{
+    padding: 40px 0 60px;
+  }
   section{
     padding:64px 0;
     border-bottom:1px solid var(--line);
