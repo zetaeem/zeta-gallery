@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZETA — Distressed Bootcut</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="estilo.css">
+  <style>
+    .visor .foto {
+      object-fit: contain;
+    }
+    .miniaturas {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .miniaturas button {
+      padding: 0;
+      border: 0;
+      background: none;
+      cursor: pointer;
+    }
+    .miniaturas .foto {
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      transition: border-color 0.2s ease;
+    }
+    .miniaturas button:hover .foto,
+    .miniaturas button.activa .foto {
+      border-color: var(--ink);
+    }
+  </style>
+</head>
+<body>
+
+<nav class="wrap">
+  <div class="brandmark">ZETA</div>
+  <div>
+    <a href="index.html#galeria">Diseños</a>
+    <a href="index.html#marca">Sobre nosotros</a>
+  </div>
+</nav>
+
+<main>
+  <section>
+    <div class="wrap">
+      <a class="volver" href="index.html">← Volver a la galería</a>
+
+      <div class="detalle-grid">
+        <div class="visor">
+          <img class="foto" id="foto-principal" src="Imágenes zeta/Negro/DelanteroZebra.svg" alt="Zebra, frente">
+
+          <div class="miniaturas">
+            <button type="button" class="activa" data-src="Imágenes zeta/Negro/DelanteroZebra.svg" data-alt="Zebra, frente">
+              <img class="foto" src="Imágenes zeta/Negro/DelanteroZebra.svg" alt="Frente">
+            </button>
+            <button type="button" data-src="Imágenes zeta/Negro/TraseroZebra.svg" data-alt="Zebra, espalda">
+              <img class="foto" src="Imágenes zeta/Negro/TraseroZebra.svg" alt="Espalda">
+            </button>
+            <button type="button" data-src="Imágenes zeta/Negro/BolsasZebra.svg" data-alt="Zebra, bolsillos">
+              <img class="foto" src="Imágenes zeta/Negro/BolsasZebra.svg" alt="Detalle bolsillos">
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <h1>Zebra Bootcut</h1>
+          <p class="color">Negro</p>
+          <p class="desc">Bootcut Animal Print Zebra</p>
+
+          <ul class="datos">
+            <li><span>Color</span><span>Negro</span></li>
+            <li><span>Corte</span><span>Loose Bootcut</span></li>
+            <li><span>Tallas</span><span>Por definir</span></li>
+            <li><span>Precio</span><span>Por definir</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>ZETA — "Sé tú mismo para ti mismo"</span>
+    <span>@zetaeem</span>
+    <span>Monterrey, 2010</span>
+  </div>
+</footer>
+
+<script>
+  const principal = document.getElementById("foto-principal");
+  const botones = document.querySelectorAll(".miniaturas button");
+
+  botones.forEach(function (boton) {
+    boton.addEventListener("click", function () {
+      principal.src = boton.dataset.src;
+      principal.alt = boton.dataset.alt;
+      botones.forEach(function (b) { b.classList.remove("activa"); });
+      boton.classList.add("activa");
+    });
+  });
+</script>
+
+</body>
+</html>
