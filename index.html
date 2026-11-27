@@ -3,50 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZETA — Galería</title>
+  <title>ZETA | Galería</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-
+<body id="inicio">
+    <!-- Navegación -->
 <nav class="wrap">
-  <div class="brandmark">ZETA</div>
-  <div>
-    <a href="#galeria">Diseños</a>
-    <a href="#marca">Sobre nosotros</a>
-  </div>
-</nav>
-
+        <a href="#inicio" class="brandmark" aria-label="Volver al inicio">ZETA</a>
+        <div>
+            <a href="#galeria" class="nav-link">
+                <sup>01</sup> Diseños
+            </a>
+            <a href="#marca" class="nav-link">
+                <sup>02</sup> Sobre nosotros
+            </a>
+            <button id="theme-toggle" class="theme-btn" aria-label="Cambiar modo de color">
+                <svg class="icon-theme" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 3v18" />
+                    <path d="M12 3a9 9 0 0 1 0 18V3z" fill="currentColor" class="eclipse-shade" />
+                </svg>
+            </button>
+        </div>
+    </nav>
 <header class="hero">
+<!-- CINTA EDITORIAL ZETA -->
+<div class="cinta">
+    <div class="cinta-track">
+        <span>
+            ZETA ✳ SÉ TÚ MISMO PARA TI MISMO ✳
+            ZETA ✳ SÉ TÚ MISMO PARA TI MISMO ✳
+            ZETA ✳ SÉ TÚ MISMO PARA TI MISMO ✳
+            ZETA ✳ SÉ TÚ MISMO PARA TI MISMO ✳
+        </span>
+        <span aria-hidden="true">
+            ZETA ✳ SÉ TÚ MISMO PARA TI MISMO ✳
+            ZETA ✳ SÉ TÚ MISMO PARA TI MISMO ✳
+            ZETA ✳ SÉ TÚ MISMO PARA TI MISMO ✳
+            ZETA ✳ SÉ TÚ MISMO PARA TI MISMO ✳
+        </span>
+    </div>
+</div>
   <div class="wrap">
     <img class="logo" src="Imágenes zeta/Logo-Zeta-N-2.svg" alt="Logo Zeta">
     <p>"La moda no es simplemente ropa, es una forma de expresión de uno mismo"</p>
   </div>
 </header>
-
+<!-- Contenido -->
 <main>
   <section id="galeria">
     <div class="wrap">
       <div class="section-head">
         <h2>Galería</h2>
-        <span>3 modelos</span>
+        <span id="modelos-count">3 modelos</span>
       </div>
-
+      <div class="buscador">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" id="buscarPrenda" placeholder="Buscar diseños..." aria-label="Buscar prendas por nombre o descripción">
+      </div>
+      <p id="sin-resultados" class="sin-resultados" hidden>
+        No se encontraron diseños.
+      </p>
       <div class="galeria">
         <a class="tarjeta" href="indigo.html">
           <img class="foto" src="Imágenes zeta/Indigo/IndigoFrente.png" alt="Distressed Bootcut azul índigo">
           <div class="nombre">Distressed Bootcut</div>
           <div class="detalle">Azul Índigo</div>
         </a>
-
         <a class="tarjeta" href="zebra.html">
           <img class="foto" src="Imágenes zeta/Negro/NegroFrente (1).png" alt="Zebra Bootcut blanco y negro">
           <div class="nombre">Zebra Bootcut</div>
           <div class="detalle">White and Black</div>
         </a>
-
         <a class="tarjeta">
           <img class="foto" src="Imágenes zeta/Cheetah/CheetahFrente (1).png" alt="Cheetah Wideleg animal print">
           <div class="nombre">Cheetah Wideleg</div>
@@ -55,7 +88,6 @@
       </div>
     </div>
   </section>
-
   <section id="marca">
     <div class="wrap marca-grid">
       <div class="label">Sobre nosotros</div>
@@ -68,14 +100,23 @@
     </div>
   </section>
 </main>
-
 <footer>
-  <div class="wrap">
-    <span>ZETA — "Sé tú mismo para ti mismo"</span>
-    <span>@zetaeem</span>
-    <span>Monterrey, 2010</span>
+  <div class="wrap footer-contenido">
+    <span>Zeta — "Sé tú mismo para ti mismo"</span>
+    <div class="redes-sociales" aria-label="Redes sociales de ZETA">
+      <a href="https://www.instagram.com/zet1taa/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+      </a>
+      <a href="https://www.tiktok.com/@zet1taa" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok">
+        <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+      </a>
+      <a href="https://mx.pinterest.com/zetaeem/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" title="Pinterest">
+        <i class="fa-brands fa-pinterest-p" aria-hidden="true"></i>
+      </a>
+    </div>
+    <span>Monterrey / 2010</span>
   </div>
 </footer>
-
+<script src="main.js" defer></script>
 </body>
 </html>

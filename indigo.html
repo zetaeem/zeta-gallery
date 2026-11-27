@@ -8,52 +8,42 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="estilo.css">
-  <style>
-    .visor .foto {
-      object-fit: contain;
-    }
-    .miniaturas {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 12px;
-    }
-    .miniaturas button {
-      padding: 0;
-      border: 0;
-      background: none;
-      cursor: pointer;
-    }
-    .miniaturas .foto {
-      aspect-ratio: 1 / 1;
-      object-fit: contain;
-      transition: border-color 0.2s ease;
-    }
-    .miniaturas button:hover .foto,
-    .miniaturas button.activa .foto {
-      border-color: var(--ink);
-    }
-  </style>
+  <!-- Iconos de redes sociales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-
+<!-- Navegación -->
 <nav class="wrap">
-  <div class="brandmark">ZETA</div>
-  <div>
-    <a href="index.html#galeria">Diseños</a>
-    <a href="index.html#marca">Sobre nosotros</a>
-  </div>
+    <a href="index.html#inicio" class="brandmark" aria-label="Volver al inicio">
+        ZETA
+    </a>
+    <div>
+        <a href="index.html#galeria" class="nav-link">
+            <sup>01</sup> Diseños
+        </a>
+        <a href="index.html#marca" class="nav-link">
+            <sup>02</sup> Sobre nosotros
+        </a>
+        <button id="theme-toggle" class="theme-btn" aria-label="Cambiar modo de color">
+            <svg class="icon-theme" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 3v18" />
+                <path d="M12 3a9 9 0 0 1 0 18V3z" fill="currentColor" class="eclipse-shade" />
+            </svg>
+        </button>
+    </div>
 </nav>
-
+<!-- Contenido -->
 <main>
   <section>
     <div class="wrap">
-      <a class="volver" href="index.html">← Volver a la galería</a>
-
+      <a class="volver" href="index.html#galeria">
+        ← Volver a la galería
+      </a>
       <div class="detalle-grid">
         <div class="visor">
           <img class="foto" id="foto-principal" src="Imágenes zeta/Indigo/Delantero Bootcut.svg" alt="Distressed Bootcut azul índigo, frente">
-
+          <!-- Vistas de la prenda -->
           <div class="miniaturas">
             <button type="button" class="activa" data-src="Imágenes zeta/Indigo/Delantero Bootcut.svg" data-alt="Distressed Bootcut azul índigo, frente">
               <img class="foto" src="Imágenes zeta/Indigo/Delantero Bootcut.svg" alt="Frente">
@@ -66,45 +56,51 @@
             </button>
           </div>
         </div>
-
         <div>
           <h1>Distressed Bootcut</h1>
           <p class="color">Azul Índigo</p>
           <p class="desc">Jean Denim 14oz</p>
-
           <ul class="datos">
-            <li><span>Color</span><span>Azul Índigo</span></li>
-            <li><span>Corte</span><span>Bootcut</span></li>
-            <li><span>Tallas</span><span>Por definir</span></li>
-            <li><span>Precio</span><span>Por definir</span></li>
+            <li>
+              <span>Color</span>
+              <span>Azul Índigo</span>
+            </li>
+            <li>
+              <span>Corte</span>
+              <span>Bootcut</span>
+            </li>
+            <li>
+              <span>Tallas</span>
+              <span>Por definir</span>
+            </li>
+            <li>
+              <span>Precio</span>
+              <span>Por definir</span>
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 </main>
-
+<!-- Footer y redes sociales -->
 <footer>
-  <div class="wrap">
+  <div class="wrap footer-contenido">
     <span>ZETA — "Sé tú mismo para ti mismo"</span>
-    <span>@zetaeem</span>
-    <span>Monterrey, 2010</span>
+    <div class="redes-sociales" aria-label="Redes sociales de ZETA">
+      <a href="https://www.instagram.com/zet1taa/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+      </a>
+      <a href="https://www.tiktok.com/@zet1taa" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok">
+        <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+      </a>
+      <a href="https://mx.pinterest.com/zetaeem/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" title="Pinterest">
+        <i class="fa-brands fa-pinterest-p" aria-hidden="true"></i>
+      </a>
+    </div>
+    <span>Monterrey / 2010</span>
   </div>
 </footer>
-
-<script>
-  const principal = document.getElementById("foto-principal");
-  const botones = document.querySelectorAll(".miniaturas button");
-
-  botones.forEach(function (boton) {
-    boton.addEventListener("click", function () {
-      principal.src = boton.dataset.src;
-      principal.alt = boton.dataset.alt;
-      botones.forEach(function (b) { b.classList.remove("activa"); });
-      boton.classList.add("activa");
-    });
-  });
-</script>
-
+<script src="main.js" defer></script>
 </body>
 </html>
